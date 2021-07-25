@@ -1,0 +1,5 @@
+video{
+    width: 60%;
+    height: 50vh;
+    scroll-snap-align: start;
+}
