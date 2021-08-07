@@ -1,42 +1,39 @@
-import React,{useState,useEffect} from 'react'
-import {database} from '../firebase';
-import { makeStyles } from '@material-ui/core/styles';
-import { CircularProgress } from '@material-ui/core';
-import { Avatar } from '@material-ui/core';
-import './Comments.css';
-const useStyles = makeStyles({
-  da:{
-      marginRight:'2%',
-      marginTop:'2%'
-  }
- })
-function Comments(props) {
+import React, { useState } from 'react';
+import { makeStyles, Avatar, Typography } from '@material-ui/core';
+
+
+export default function Comments({commentObj}) {
+
+    const useStyles = makeStyles({
+        commentBox: {
+            display: "flex",
+        },
+        avatarIcon: {
+            marginLeft: "1rem",
+            height: "1.5rem",
+            width: "1.5rem"
+        },
+        commentContent: {
+            marginLeft: "1rem",
+        },
+        commentText: {
+            fontFamily: "Nuntino Sans, sans-serif",
+            color: "#4b4b4b",
+            letterSpacing: "0.8px",
+        }
+    })
+
     const classes = useStyles();
-    const [comments,setComments] =useState(null);
-    useEffect(async() => {
-        let arr=[];
-        for(let i=0;i<props.postData.comments.length;i++)
-        {
-            let cid = props.postData.comments[i];
-            let data = await database.comments.doc(cid).get();
-            arr.push(data.data());
-        }
-        setComments(arr)
-        
-    }, [props.postData])
+
+    const [comment, setComment] = useState("");
+
     return (
-        <>
-        {
-            comments==null?<CircularProgress/>:
-            comments.map((comment,index)=>(
-                <div key={index} className='comment-div'>
-                    <Avatar src={comment.uUrl} className={classes.da}/>
-                    <p><span style={{fontWeight:'bold',display:'inline-block'}} >{comment.uName}</span>&nbsp;&nbsp;{comment.text}</p>
-                </div>
-            ))
-        }
-        </>
+        <div className={classes.commentBox}>
+            <Avatar alt="Remy Sharp" className={classes.avatarIcon} src={commentObj.profileImageURL}/>
+            <div className={classes.commentContent}>
+                <Typography variant="subtitle2" className={classes.profile} >{commentObj.username}</Typography>
+                <Typography variant="body2" className={classes.commentText}>{commentObj.description}</Typography>
+            </div>
+        </div>
     )
 }
-
-export default Comments
