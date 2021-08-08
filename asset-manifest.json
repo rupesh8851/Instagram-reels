@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/MoviesApp/static/css/main.7ee78606.chunk.css",
-    "main.js": "/MoviesApp/static/js/main.2e1116d3.chunk.js",
-    "main.js.map": "/MoviesApp/static/js/main.2e1116d3.chunk.js.map",
-    "runtime-main.js": "/MoviesApp/static/js/runtime-main.21357ca5.js",
-    "runtime-main.js.map": "/MoviesApp/static/js/runtime-main.21357ca5.js.map",
-    "static/js/2.83923d0e.chunk.js": "/MoviesApp/static/js/2.83923d0e.chunk.js",
-    "static/js/2.83923d0e.chunk.js.map": "/MoviesApp/static/js/2.83923d0e.chunk.js.map",
-    "static/js/3.854757c8.chunk.js": "/MoviesApp/static/js/3.854757c8.chunk.js",
-    "static/js/3.854757c8.chunk.js.map": "/MoviesApp/static/js/3.854757c8.chunk.js.map",
-    "index.html": "/MoviesApp/index.html",
-    "static/css/main.7ee78606.chunk.css.map": "/MoviesApp/static/css/main.7ee78606.chunk.css.map",
-    "static/js/2.83923d0e.chunk.js.LICENSE.txt": "/MoviesApp/static/js/2.83923d0e.chunk.js.LICENSE.txt",
-    "static/media/logo.6ce24c58.svg": "/MoviesApp/static/media/logo.6ce24c58.svg"
+    "main.css": "/Reel-Stagger/static/css/main.7ee78606.chunk.css",
+    "main.js": "/Reel-Stagger/static/js/main.2e1116d3.chunk.js",
+    "main.js.map": "/Reel-Stagger/static/js/main.2e1116d3.chunk.js.map",
+    "runtime-main.js": "/Reel-Stagger/static/js/runtime-main.5f3b2ffb.js",
+    "runtime-main.js.map": "/Reel-Stagger/static/js/runtime-main.5f3b2ffb.js.map",
+    "static/js/2.d7e2e9cf.chunk.js": "/Reel-Stagger/static/js/2.d7e2e9cf.chunk.js",
+    "static/js/2.d7e2e9cf.chunk.js.map": "/Reel-Stagger/static/js/2.d7e2e9cf.chunk.js.map",
+    "static/js/3.854757c8.chunk.js": "/Reel-Stagger/static/js/3.854757c8.chunk.js",
+    "static/js/3.854757c8.chunk.js.map": "/Reel-Stagger/static/js/3.854757c8.chunk.js.map",
+    "index.html": "/Reel-Stagger/index.html",
+    "static/css/main.7ee78606.chunk.css.map": "/Reel-Stagger/static/css/main.7ee78606.chunk.css.map",
+    "static/js/2.d7e2e9cf.chunk.js.LICENSE.txt": "/Reel-Stagger/static/js/2.d7e2e9cf.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/Reel-Stagger/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.21357ca5.js",
-    "static/js/2.83923d0e.chunk.js",
+    "static/js/runtime-main.5f3b2ffb.js",
+    "static/js/2.d7e2e9cf.chunk.js",
     "static/css/main.7ee78606.chunk.css",
     "static/js/main.2e1116d3.chunk.js"
   ]
