@@ -10,7 +10,7 @@ export default function CommentVideo({ commentVideoObj }) {
             position: "relative",
         }}>
             <video
-                width="1000"
+                width="500"
                 height='500'
                 autoPlay
                 loop
