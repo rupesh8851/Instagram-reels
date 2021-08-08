@@ -7,8 +7,9 @@ import { database } from '../firebase';
 const useStyles = makeStyles({
    cbtn:{
        marginRight:'1%',
-       marginTop:'4%'
+       marginTop:'41%'
    }
+  
 })
 function AddComment({userData=null , postData=null}) {
     const classes = useStyles();
@@ -37,7 +38,7 @@ function AddComment({userData=null , postData=null}) {
     }
     return (
         <div className='emojibox' >
-            <TextField value={text} fullWidth={true} label='Add a comment' onChange={manageText}/>
+            <TextField value={text} fullWidth={true} label='Add a comment'  onChange={manageText}/>
             <Button onClick={handleOnEnter} disabled={text==''?true:false} className ={classes.cbtn} color='primary'>Post</Button>
         </div>
     )

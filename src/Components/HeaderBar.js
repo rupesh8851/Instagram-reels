@@ -59,7 +59,9 @@ export default function HeaderBar({loading, setLoading, user}) {
                 <Toolbar
                     className={classes.toolBar}
                     variant="dense">
-                    <img height="100%" width="150vw" src="https://www.logo.wine/a/logo/Instagram/Instagram-Wordmark-Black-Logo.wine.svg" />
+                    
+                    {/* <Typography variant="subtitle1" className={classes.profileName}>Rupesh_Sharma</Typography> */}
+                    <img height="100%" width="250vw" src="http://gunksclimbers.org/wp-content/uploads/2016/11/reel-rock-11-logo-e1479957179399.png" />
                     <Container className={classes.iconContainer}>
                         <IconButton className={classes.iconButton}>
                             <Link to="/" style={{textDecoration: "none", color: "inherit"}} >
