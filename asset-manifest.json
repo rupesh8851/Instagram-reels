@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Reel-Stagger/static/css/main.7ee78606.chunk.css",
-    "main.js": "/Reel-Stagger/static/js/main.2e1116d3.chunk.js",
-    "main.js.map": "/Reel-Stagger/static/js/main.2e1116d3.chunk.js.map",
+    "main.js": "/Reel-Stagger/static/js/main.9ff8390b.chunk.js",
+    "main.js.map": "/Reel-Stagger/static/js/main.9ff8390b.chunk.js.map",
     "runtime-main.js": "/Reel-Stagger/static/js/runtime-main.5f3b2ffb.js",
     "runtime-main.js.map": "/Reel-Stagger/static/js/runtime-main.5f3b2ffb.js.map",
     "static/js/2.d7e2e9cf.chunk.js": "/Reel-Stagger/static/js/2.d7e2e9cf.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.5f3b2ffb.js",
     "static/js/2.d7e2e9cf.chunk.js",
     "static/css/main.7ee78606.chunk.css",
-    "static/js/main.2e1116d3.chunk.js"
+    "static/js/main.9ff8390b.chunk.js"
   ]
 }
