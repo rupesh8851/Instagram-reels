@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react'
-import  {AuthContext}  from '../Context/AuthProvider';
+import { AuthContext } from '../Context/AuthProvider';
 import { makeStyles, Avatar, Container, CircularProgress, Modal, Backdrop, Fade, Button, TextField } from '@material-ui/core';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import { database, storage } from '../firebase';
@@ -46,9 +46,9 @@ export default function Feed() {
             color: "#f1f2f6"
         },
         videoContainer: {
-            height:   "25rem",
             position: "relative",
-            display: "flex"
+            display: "flex",
+            height: "80vh",
         },
         circularLoader: {
             position: "absolute",
@@ -78,6 +78,7 @@ export default function Feed() {
             position: "absolute",
             bottom: "1rem",
             left: "0.5rem",
+            marginLeft:'180px',
             minHeight: "5rem",
             // backgroundColor: "lightgreen",
             display: "flex",
@@ -208,7 +209,10 @@ export default function Feed() {
 
         let unsubscribe =
             await database.posts
-                                .onSnapshot(async snapshot => {
+                .orderBy("createdAt", "desc")
+                .startAfter(lastVisiblePost)
+                .limit(2)
+                .onSnapshot(async snapshot => {
                     if (snapshot.docs.length === 0) {
                         setLastVisiblePost(null);
                         setLoading(false);
@@ -224,7 +228,6 @@ export default function Feed() {
                         let { url: videoUrl, auid, likes, videoDescription } = curVideos[i];
                         let puid = snapshot.docs[i].id;
                         let userObject = await database.users.doc(auid).get();
-                        
                         let { profileImageURL: userProfileImageURL, username } = userObject.data();
 
                         // For likes, check if current user has liked the post
@@ -252,7 +255,7 @@ export default function Feed() {
         let unsubscribe =
             await database.posts
                 .orderBy("createdAt", "desc")
-                .limit(3)
+                .limit(10)
                 .onSnapshot(async snapshot => {
                     if (lastVisiblePost) return;
                     let videos = snapshot.docs.map(doc => doc.data());
@@ -267,7 +270,6 @@ export default function Feed() {
                         let puid = snapshot.docs[i].id;
                         let userObject = await database.users.doc(auid).get();
                         let { profileImageURL: userProfileImageURL, username } = userObject.data();
-
                         // For likes, check if current user has liked the post
                         videosDataArrFromFireStore.push({
                             videoUrl,
@@ -300,7 +302,7 @@ export default function Feed() {
         let scrollAndVideoActionConditionObject = {
             root: null,
             rootMargin: "0px",
-            threshold: "1.0"
+            threshold: "0.7"
         }
         let infiniteScrollConditionObject = {
             root: null,
@@ -518,10 +520,11 @@ function Video(props) {
         <>
             <video
                 onClick={handlePostSound}
-                muted={true}
+                muted={false}
                 id={props.id}
                 src={props.src}
-                onEnded={onVideoEnd}>
+              //  onEnded={onVideoEnd} 
+                >
             </video>
         </>
     )
@@ -532,14 +535,14 @@ function handlePostSound(e) {
 }
 
 function onVideoEnd(e) {
-    // let nextVideoSiblingParent = e.target.parentElement.nextSibling;
-    // if (nextVideoSiblingParent) {
-    //     let videoDimensions = nextVideoSiblingParent.children[0].getBoundingClientRect();
-    //     window.scrollBy({
-    //         top: videoDimensions.top,
-    //         left: videoDimensions.left,
-    //         behavior: 'smooth'
-    //     })
-    // }
+    let nextVideoSiblingParent = e.target.parentElement.nextSibling;
+    if (nextVideoSiblingParent) {
+        let videoDimensions = nextVideoSiblingParent.children[0].getBoundingClientRect();
+        window.scrollBy({
+            top: videoDimensions.top,
+            left: videoDimensions.left,
+            behavior: 'smooth'
+        })
+    }
     
 }
